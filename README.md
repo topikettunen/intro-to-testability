@@ -1,7 +1,5 @@
 # PolarSquad - Intro to Testing 
 
-# PolarSquad - Intro to Testing 
-
 Software projects tend to label testing under a large umbrella of different testing definitions. We often see tests like unit tests, acceptance tests, integration tests, system tests, and so many more. These can get quite confusing relatively quickly, especially to those who don't work primarily in the field of quality assurance.
 
 I'm by no means a testing expert, even though I've worked in a QA company for a few years, where I could see how these things are done. I worked as a DevOps consultant there, but you can often see these two being linked together quite closely.
