@@ -66,11 +66,11 @@ An important skill when writing code is the ability to make your code testable. 
 
 SOLID principles are various methods of trying to make software design more maintainable and readable. Robert C. Martin first introduced these principles in his 2000 paper Design Principles and Design Patterns. SOLID  is an acronym for the following principles:
 
-The Single-responsibility principle: a class should only have a single responsibility; that is, only changes to one part of the software's specification should be able to affect the specification of the class.
-The Open–closed principle: "software entities ... should be open for extension, but closed for modification."
-The Liskov substitution principle: "objects in a program should be replaceable with instances of their subtypes without altering the correctness of that program." See also design by contract.
-The Interface segregation principle: "many client-specific interfaces are better than one general-purpose interface."
-The Dependency inversion principle: "depend upon abstractions, not concretions."
+- The Single-responsibility principle: a class should only have a single responsibility; that is, only changes to one part of the software's specification should be able to affect the specification of the class.
+- The Open–closed principle: "software entities ... should be open for extension, but closed for modification."
+- The Liskov substitution principle: "objects in a program should be replaceable with instances of their subtypes without altering the correctness of that program." See also design by contract.
+- The Interface segregation principle: "many client-specific interfaces are better than one general-purpose interface."
+- The Dependency inversion principle: "depend upon abstractions, not concretions."
 
 These principles were mainly designed for object-oriented programming, but similar ideas can be utilized in general software development. The following example is difficult to test, but we can fix it quite nicely with these principles.
 
