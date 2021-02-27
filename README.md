@@ -26,7 +26,7 @@ An important thing to note in these tests is that these tests should not be coup
 
 These tests are also used mainly for rapid feedback to the programmer, so they shouldn't take a long time to run. Usually, if this part of testing takes a long time, the tests themselves are poorly written, or the tests do something that they shouldn't do. We discuss how to make your program to be testable later.
 
-*** Functional tests
+### Functional tests
 
 Functional tests can be seen as a unit test but written at a more extensive scope. Appropriate mocks are often used for different slow parts of the system if needed (e.g. mock APIs, mock databases).
 
