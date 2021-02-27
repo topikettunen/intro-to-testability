@@ -74,7 +74,7 @@ The Dependency inversion principle: "depend upon abstractions, not concretions."
 
 These principles were mainly designed for object-oriented programming, but similar ideas can be utilized in general software development. The following example is difficult to test, but we can fix it quite nicely with these principles.
 
-```
+``` go
 var db *sql.DB
 
 ...
@@ -99,7 +99,7 @@ func writeUserName(id int) {
 
 Here you can see a code example that is tightly coupled to a database and the file system. What happens when the database doesn't exist or isn't running? Or when `data.txt` is already open or just cannot be modified? To make it a little bit more testable, we need to be able to break these couplings.
 
-```
+``` go
 type myDB struct {
 	db *sql.DB
 }
