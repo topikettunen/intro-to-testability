@@ -104,7 +104,7 @@ type myDB struct {
 	db *sql.DB
 }
 
-func newMyDB(db *sql.DB) *UserRepo {
+func newMyDB(db *sql.DB) *myDB {
 	return &myDB{
 		db: db,
 	}
@@ -128,7 +128,19 @@ func (db *myDB) writeUserName(id int, file string) {
 }
 ```
 
-This is one way to make it a little bit more testable. This also allows us to some better mocking against possible DB queries. Now there are multiple ways of doing this, so I'm just mainly making a point here.
+This is one way to make it a little bit more testable. This also allows us to some better mocking against possible DB queries. Now there are multiple ways of doing this, so I'm just mainly making a point here. Then you could call maybe something like this:
+
+```
+func someOtherFunc(sqlDriver, host string) {
+	// e.g. "mysql", "user:password@tcp(127.0.0.1:3306)/hello"
+	my, err := sql.Open(sqlDriver, host)
+	if err != nil {
+		log.Fatal(err)
+	}
+	db := newMyDB(my)
+	db.writeUserName()
+}
+```
 
 #### Non-determinism in code
 
