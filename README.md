@@ -147,7 +147,7 @@ func someOtherFunc(sqlDriver, host string) {
 Very simple example of non-testable code is different non-deterministic factors in your code. Let's look at this example:
 
 ``` go
-func getTimeOfDay() {
+func getTimeOfDay() string {
     now := time.Now()
     if now.Hour >= 0 && now.Hour < 6 {
 	    return "Night"
@@ -165,7 +165,7 @@ func getTimeOfDay() {
 Considering the functionality of this function, it works as it should. It gets the current time of day. Unfortunately, in this form, the code is not testable unless we want to start tinkering with the system's time itself. This is also a great example of tightly coupling in the software. It is not possible to reuse this method for possible date and time processing in any way. It has these hidden inputs inside, so it lies about the information required to get the day's time. Thankfully fixing this is easy:
 
 ``` go
-func getTimeOfDay(now Time) {
+func getTimeOfDay(now Time) string {
     if now.Hour >= 0 && now.Hour < 6 {
 	    return "Night"
     }
