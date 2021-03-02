@@ -110,7 +110,7 @@ func newMyDB(db *sql.DB) *myDB {
 	}
 }
 
-func (db *myDB) writeUserName(file string) {
+func (db *myDB) writeUserName(id int, file string) {
 	var name string
 	err := db.Query("select name from users where id = ?", id).Scan(&name)
 	if err != nil {
