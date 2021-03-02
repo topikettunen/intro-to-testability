@@ -181,6 +181,26 @@ func getTimeOfDay(now Time) string {
 
 Time is an excellent example of non-determinism. Even though we fixed this on this one level, we have just moved the problem to another abstraction level. So we need to care about the same thing on that level too. This makes time also a great example of where mockups can be very useful. I'm not going into detail about how this is done since the point is to picture how this kind of non-determinism might affect your code's testability.
 
+#### Side-effects
+
+How do I test this?
+
+```go
+func getGreeting() string {
+	var now = time.Now
+   	if now.Hour >= 0 && now.Hour < 6 {
+		timeOfDay = "Night"
+    	}
+    	if now.Hour >= 6 && now.Hour < 12 {
+		timeOfDay = "Morning"
+    	}
+    	if now.Hour >= 12 && now.Hour < 18 {
+		timeOfDay = "Afternoon"
+    	}
+	return  fmt.Sprintf("Good %s! Today is %s", timeOfDay, now.Weekday())
+}
+```
+
 ## Conclusion
 
 So there is a lot to cover when we talk about testing. Fortunately, software project quite often tends to have dedicated people for doing most of this stuff. Still, when it comes to this practice's practicality, it is the programmers who are doing it. Especially object-oriented way of thinking causes much cognitive overhead when you need to start thinking testability of the software. This may seem like a lot of work, but almost always, it is necessary for the overall success of the project.
