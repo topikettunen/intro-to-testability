@@ -187,7 +187,7 @@ How do I test this?
 
 ```go
 func getGreeting() string {
-	var now = time.Now
+	now = time.Now
    	if now.Hour >= 0 && now.Hour < 6 {
 		timeOfDay = "Night"
     	}
